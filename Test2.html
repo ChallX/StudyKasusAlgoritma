@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilangan Terbesar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bilangan Terbesar</h1>
+    <form id="numberForm">
+        <label for="bil1">Bilangan 1:</label>
+        <input type="number" id="bil1" name="bil1" required>
+        
+        <label for="bil2">Bilangan 2:</label>
+        <input type="number" id="bil2" name="bil2" required>
+        
+        <label for="bil3">Bilangan 3:</label>
+        <input type="number" id="bil3" name="bil3" required>
+        
+        <button type="button" onclick="findLargest()">Submit</button>
+    </form>
+    
+    <p id="result"></p>
+
+    <script>
+        function findLargest() {
+            var bil1 = document.getElementById('bil1').value;
+            var bil2 = document.getElementById('bil2').value;
+            var bil3 = document.getElementById('bil3').value;
+
+            var resultText;
+
+            if (bil1 > bil2 && bil1 > bil3) {
+                resultText = bil1 + " Bilangan Terbesar";
+            } else if (bil2 > bil3) {
+                resultText = bil2 + " Bilangan Terbesar";
+            } else {
+                resultText = bil3 + " Bilangan Terbesar";
+            }
+
+            document.getElementById("result").innerText = resultText;
+        }
+    </script>
+</body>
+</html>
